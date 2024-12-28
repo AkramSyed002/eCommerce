@@ -3,7 +3,6 @@ import { COLORS, ROUTES } from "@muc/constants";
 import {
   FavoriteBorder,
   Menu,
-  PersonOutlineOutlined,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import {
@@ -21,8 +20,13 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { navLink, searchBar } from "@muc/utils";
+import { useCart } from "@muc/context";
+import { useNavigate } from "react-router-dom";
+import { AccountDropdown } from "@muc/components";
 
 const Navbar = () => {
+  const { cart } = useCart();
+  const navigate = useNavigate();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [activeLink, setActiveLink] = useState(window.location.pathname); // Initialize with current pathname
   const theme = useTheme();
@@ -88,9 +92,7 @@ const Navbar = () => {
               <Box
                 sx={{
                   padding: 2,
-                  bgcolor: 'red',
-                  width:300,
-                  
+                  width: 300,
                 }}
               >
                 <List>
@@ -132,7 +134,34 @@ const Navbar = () => {
                       Sign Up
                     </Link>
                   </ListItem>
+                  <ListItem>
+                    <Link
+                      href={ROUTES.AUTHENTICATION.SIGNUP_FORM}
+                      onClick={() =>
+                        handleLinkClick(ROUTES.AUTHENTICATION.SIGNUP_FORM)
+                      }
+                      sx={getLinkStyles(ROUTES.AUTHENTICATION.SIGNUP_FORM)}
+                    >
+                      Account
+                    </Link>
+                  </ListItem>
                 </List>
+              </Box>
+              <Box display={"flex"} alignItems={"center"} gap={"15px"}>
+                <Box
+                  position={"relative"}
+                  onClick={() => navigate(ROUTES.SHOPPING_CART)}
+                  ml={5}
+                >
+                  <ShoppingCartOutlined
+                    sx={{ color: COLORS.dark.main, cursor: "pointer" }}
+                  />
+                  {cart.products.length ? (
+                    <Box component={"span"} sx={cartNotification}>
+                      {cart.products.length}
+                    </Box>
+                  ) : null}
+                </Box>
               </Box>
             </Drawer>
           </>
@@ -193,9 +222,23 @@ const Navbar = () => {
                   ),
                 }}
               />
-              <FavoriteBorder sx={{ color: COLORS.dark.main, ml: 3 }} />
-              <ShoppingCartOutlined sx={{ color: COLORS.dark.main }} />
-              <PersonOutlineOutlined sx={{ color: COLORS.dark.main }} />
+              <FavoriteBorder
+                sx={{ color: COLORS.dark.main, ml: 3, cursor: "pointer" }}
+              />
+              <Box
+                position={"relative"}
+                onClick={() => navigate(ROUTES.SHOPPING_CART)}
+              >
+                <ShoppingCartOutlined
+                  sx={{ color: COLORS.dark.main, cursor: "pointer" }}
+                />
+                {cart.products.length ? (
+                  <Box component={"span"} sx={cartNotification}>
+                    {cart.products.length}
+                  </Box>
+                ) : null}
+              </Box>
+              <AccountDropdown  />
             </Box>
           </>
         )}
@@ -205,3 +248,18 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const cartNotification = {
+  position: "absolute",
+  top: -5,
+  right: -4,
+  bgcolor: COLORS.primary.main,
+  width: "15px",
+  height: "15px",
+  alignItems: "center",
+  textAlign: "center",
+  justifyContent: "center",
+  fontSize: "10px",
+  borderRadius: "50px",
+  display: "flex",
+};

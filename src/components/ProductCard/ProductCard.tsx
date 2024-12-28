@@ -3,6 +3,7 @@ import { productCardType } from "@muc/types";
 import { cardIcons, insideProductCard, productCard } from "@muc/utils";
 import { Box, Button, Typography } from "@mui/material";
 import Rating from "@mui/material/Rating";
+import { useCart, useSuccessErrorNotification } from "@muc/context";
 
 type dataType = {
   data: productCardType;
@@ -10,9 +11,39 @@ type dataType = {
 };
 
 const ProductCard = ({ data, topProduct }: dataType) => {
+  const { addProduct } = useCart();
+  const { setAlert } = useSuccessErrorNotification();
+
+  const handleAddToCart = () => {
+    try {
+      addProduct({
+        id: String(data.id),
+        poster: data.poster,
+        name: data.title,
+        price: data.newPrice,
+        quantity: 1,
+      });
+
+      setAlert({
+        message: { subTitle: "Product added to cart successfully!" },
+        show: true,
+        variant: "success",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Box display={"flex"} flexWrap={"wrap"}>
-      <Box sx={{ productCard, width: topProduct ? "285px" : {md:"250px",sm:'300px',xs:'100%' }}}>
+      <Box
+        sx={{
+          productCard,
+          width: topProduct
+            ? "285px"
+            : { md: "250px", sm: "300px", xs: "100%" },
+        }}
+      >
         <Box sx={insideProductCard}>
           <Box
             component={"img"}
@@ -36,13 +67,14 @@ const ProductCard = ({ data, topProduct }: dataType) => {
           {topProduct ? null : (
             <Button
               variant="contained"
+              onClick={handleAddToCart}
               sx={{
                 bgcolor: COLORS.dark.main,
-                width: {md:"100%",sm:'100%',xs:'100%'},
+                width: { md: "100%", sm: "100%", xs: "100%" },
                 position: "absolute",
                 bottom: "0%",
                 borderRadius: "0px 0px 4px 4px",
-                height: {md:"46px",sm:'46px',xs:"50px"},
+                height: { md: "46px", sm: "46px", xs: "50px" },
               }}
             >
               Add To Cart

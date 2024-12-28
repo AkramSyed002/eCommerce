@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -37,7 +37,12 @@ const CardSlider = (props: cardType) => {
           mb: 3,
         }}
       >
-        <Typography variant="h1" sx={{fontSize:{md:'30px',sm:'auto',xs:'25px'}}}>{title}</Typography>
+        <Typography
+          variant="h1"
+          sx={{ fontSize: { md: "30px", sm: "auto", xs: "25px" } }}
+        >
+          {title}
+        </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Typography sx={arrowBtn} onClick={handlePrev}>
             <ArrowBack fontSize="small" />
