@@ -115,6 +115,7 @@ export const settings: Settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay:true
       },
     },
   ],
@@ -158,3 +159,29 @@ export const useStyles = makeStyles({
     },
   },
 });
+
+
+export const tableHead = {
+  boxShadow: `2px 4px 14px ${COLORS.gray.darkGray}`,
+  borderRadius: "8px",
+  width: "100%",
+  borderBottom: "none",
+};
+export const tableRow = {
+  boxShadow: `2px 4px 8px ${COLORS.gray.darkGray}`,
+  borderRadius: "8px",
+  borderBottom: "1px solid white",
+};
+
+export const tableContent = {
+  p: 3,
+  borderBottom: "none",
+};
+
+export const addTotalPrice = {
+  display: "flex",
+  justifyContent: "space-between",
+  borderBottom: `1px solid ${COLORS.gray.main}`,
+  mb: 1,
+  pt: 1,
+}

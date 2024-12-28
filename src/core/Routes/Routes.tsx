@@ -1,6 +1,6 @@
 import { ROUTES } from "@muc/constants";
 import { SignInContainer, SignUpContainer } from "@muc/modules";
-import { About, Contact, Home } from "@muc/screens";
+import { About, Contact, Home, ShoppingCart } from "@muc/screens";
 import { Route, Routes as ReactRoutes } from "react-router-dom";
 
 const Routes = () => {
@@ -12,6 +12,7 @@ const Routes = () => {
       </Route>
       <Route path={ROUTES.ABOUT_PAGE} element={<About />} />
       <Route path={ROUTES.CONTACT_PAGE} element={<Contact />} />
+      <Route path={ROUTES.SHOPPING_CART} element={<ShoppingCart />} />
       <Route
         path={ROUTES.AUTHENTICATION.SIGNIN_FORM}
         element={<SignInContainer />}
