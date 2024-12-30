@@ -10,65 +10,105 @@ export const PRODUCT_CARD: productCardType[] = [
     id: 1,
     poster: "/assets/images/cardImg1.svg",
     title: "HAVIT HV GAMEPAD",
+    stock: "In Stock",
     newPrice: 120,
     oldPrice: 160,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 4.5,
+    size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
   },
   {
     id: 2,
     poster: "/assets/images/cardImg2.svg",
     title: "AK WIRED KEYBOARD",
+    stock: "In Stock",
     newPrice: 960,
     oldPrice: 1000,
+    description:
+      "This component is tailored to match your in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.6,
+    size: ["XS", "SM", "M", "L"],
+    colors: ["red", "yellow", "pink"],
   },
   {
     id: 3,
     poster: "/assets/images/cardImg3.svg",
     title: "GAMING MANITOR",
+    stock: "Out of Stock",
     newPrice: 1150,
     oldPrice: 1440,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. ",
     ratingValue: 5,
+    size: ["XS", "SM", "M", "XL"],
+    colors: ["red", "blue", "yellow"],
   },
   {
     id: 4,
     poster: "/assets/images/cardImg4.svg",
     title: "COMFORT CHAIR",
+    stock: "Out of Stock",
     newPrice: 375,
     oldPrice: 540,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!aflkja dfaldf aldkjfl;akjflka",
     ratingValue: 3.4,
+    size: ["SM", "M", "L", "XL"],
+    colors: ["red", "yellow", "pink"],
   },
   {
     id: 5,
     poster: "/assets/images/cardImg4.svg",
     title: "COMFORT CHAIR",
+    stock: "In Stock",
     newPrice: 375,
     oldPrice: 540,
+    description:
+      "provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
+    size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["blue", "yellow", "pink"],
   },
   {
     id: 6,
     poster: "/assets/images/cardImg4.svg",
     title: "COMFORT CHAIR",
+    stock: "In Stock",
     newPrice: 375,
     oldPrice: 540,
+    description:
+      "This component is tailored to match yourFigma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
+    size: ["XS", "L", "XL"],
+    colors: ["red", "blue", "pink"],
   },
   {
     id: 7,
     poster: "/assets/images/cardImg1.svg",
     title: "COMFORT CHAIR",
+    stock: "Out of Stock",
     newPrice: 375,
     oldPrice: 540,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
+    size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue"],
   },
   {
     id: 8,
     poster: "/assets/images/cardImg2.svg",
     title: "AK WIRED KEYBOARD",
+    stock: "Out of Stock",
     newPrice: 960,
     oldPrice: 1000,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know",
     ratingValue: 3.6,
+    size: ["XS", "XL"],
+    colors: ["blue", "yellow"],
   },
 ];
 
@@ -106,6 +146,8 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     title: "HAVIT HV GAMEPAD",
     newPrice: 120,
     oldPrice: 160,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 4.5,
   },
   {
@@ -114,6 +156,8 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     title: "AK WIRED KEYBOARD",
     newPrice: 960,
     oldPrice: 1000,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.6,
   },
   {
@@ -122,6 +166,8 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     title: "GAMING MANITOR",
     newPrice: 1150,
     oldPrice: 1440,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 5,
   },
   {
@@ -130,6 +176,8 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     title: "COMFORT CHAIR",
     newPrice: 375,
     oldPrice: 540,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
   },
 ];
@@ -141,7 +189,12 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     title: "HAVIT HV GAMEPAD",
     newPrice: 120,
     oldPrice: 160,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 4.5,
+    size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
+    stock:'Out of Stock'
   },
   {
     id: 2,
@@ -149,7 +202,12 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     title: "AK WIRED KEYBOARD",
     newPrice: 960,
     oldPrice: 1000,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.6,
+    size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
+    stock:'In Stock'
   },
   {
     id: 3,
@@ -157,7 +215,12 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     title: "GAMING MANITOR",
     newPrice: 1150,
     oldPrice: 1440,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 5,
+    size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
+    stock:'In Stock'
   },
   {
     id: 4,
@@ -165,7 +228,12 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     title: "COMFORT CHAIR",
     newPrice: 375,
     oldPrice: 540,
+    description:
+      "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
+    size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
+    stock:'Out of Stock'
   },
 ];
 

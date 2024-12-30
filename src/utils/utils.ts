@@ -71,6 +71,12 @@ export const cardIcons = {
   alignItems: "center",
   justifyContent: "center",
   borderRadius: "50%",
+  border: `1px solid transparent`,
+  cursor: "pointer",
+  "&:hover": {
+    bgcolor: COLORS.white.main,
+    border: `1px solid ${COLORS.primary.main}`,
+  },
 };
 
 export const categoryStyle = {
@@ -115,7 +121,7 @@ export const settings: Settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay:true
+        autoplay: true,
       },
     },
   ],
@@ -160,7 +166,6 @@ export const useStyles = makeStyles({
   },
 });
 
-
 export const tableHead = {
   boxShadow: `2px 4px 14px ${COLORS.gray.darkGray}`,
   borderRadius: "8px",
@@ -184,4 +189,16 @@ export const addTotalPrice = {
   borderBottom: `1px solid ${COLORS.gray.main}`,
   mb: 1,
   pt: 1,
-}
+};
+
+export const productSize = {
+  height: 10,
+  width: 10,
+  borderRadius: "4px",
+  cursor: "pointer",
+  p: 0.8,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  fontSize: 12,
+};

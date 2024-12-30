@@ -5,27 +5,32 @@ export type productCardType = {
   newPrice: number;
   oldPrice: number;
   ratingValue: number;
+  description: string;
+  colors: string[];
+  size: string[];
+  stock:string;
 };
 
-export type categoryTypes={
+export type categoryTypes = {
   img: string;
   title: string;
-}
+};
 
-export type topSellingProducts={
+export type topSellingProducts = {
   id: number;
   poster: string;
   title: string;
   newPrice: number;
   oldPrice: number;
   ratingValue: number;
-}
+  description: string;
+};
 
-export type voucherTypes={
+export type voucherTypes = {
   id: number;
-    categories: string;
-    categoryDescription: string;
-    title: string;
-    poster: string;
-    icons: string;
-}
+  categories: string;
+  categoryDescription: string;
+  title: string;
+  poster: string;
+  icons: string;
+};

@@ -1,4 +1,4 @@
-import { COLORS, ROUTES } from "@muc/constants";
+import { COLORS } from "@muc/constants";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -47,7 +47,7 @@ export const ProductList = () => {
           variant="contained"
           height="40px"
           color={COLORS.white.main}
-          onClick={() => navigate(ROUTES.HOME_PAGE)}
+          onClick={() => navigate(-1)}
         />
       </Box>
     );
@@ -55,7 +55,22 @@ export const ProductList = () => {
 
   return (
     <Box component={Paper} elevation={0}>
-      <TableContainer sx={{ maxHeight: "400px" }}>
+      <TableContainer
+        sx={{
+          maxHeight: "400px",
+          overflowY: "scroll",
+          "&::-webkit-scrollbar": {
+            width: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: COLORS.primary.main,
+            borderRadius: "50px",
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "transparent",
+          },
+        }}
+      >
         <Table aria-label="simple table" stickyHeader>
           <TableHead>
             <TableRow sx={tableHead}>
@@ -75,7 +90,7 @@ export const ProductList = () => {
           </TableHead>
           <TableBody>
             {products.map((product) => (
-              <TableRow key={product.id} sx={tableRow}>
+              <TableRow key={product?.id} sx={tableRow}>
                 <TableCell
                   component="th"
                   scope="row"
@@ -97,7 +112,7 @@ export const ProductList = () => {
                       marginRight: 2,
                     }}
                   />
-                  <Typography variant="body1">{product.name}</Typography>
+                  <Typography variant="body1">{product?.name}</Typography>
                   <Box
                     sx={{
                       width: 20,
@@ -131,7 +146,7 @@ export const ProductList = () => {
                         updateQuantity(product.id, product.quantity - 1)
                       }
                     />
-                    {product.quantity}
+                    {product?.quantity}
                     <KeyboardArrowUp
                       onClick={() =>
                         updateQuantity(product.id, product.quantity + 1)
@@ -140,7 +155,7 @@ export const ProductList = () => {
                   </Box>
                 </TableCell>
                 <TableCell align="right">
-                  ${(product.price * product.quantity).toFixed(2)}
+                  ${(product?.price * product?.quantity).toFixed(2)}
                 </TableCell>
               </TableRow>
             ))}
@@ -155,19 +170,19 @@ export const ProductList = () => {
           my: 4,
         }}
       >
-        <Box my={{md:0,sm:0,xs:2}}>
-        <CustomBtn
-          variant="outlined"
-          title="Return to Shop"
-          height="40px"
-          onClick={() => navigate(ROUTES.HOME_PAGE)}
-        />
+        <Box my={{ md: 0, sm: 0, xs: 2 }}>
+          <CustomBtn
+            variant="outlined"
+            title="Return to Shop"
+            height="40px"
+            onClick={() => navigate(-1)}
+          />
         </Box>
         <Box
           sx={{
             p: 2,
             border: `2px solid ${COLORS.dark.main}`,
-            width: {md:"20%",sm:'50%',xs:'90%'},
+            width: { md: "20%", sm: "50%", xs: "90%" },
             borderRadius: "4px",
             justifyContent: "center",
           }}
