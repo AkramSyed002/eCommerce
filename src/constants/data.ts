@@ -194,7 +194,7 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     ratingValue: 4.5,
     size: ["XS", "SM", "M", "L", "XL"],
     colors: ["red", "blue", "yellow", "pink"],
-    stock:'Out of Stock'
+    stock: "Out of Stock",
   },
   {
     id: 2,
@@ -207,7 +207,7 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     ratingValue: 3.6,
     size: ["XS", "SM", "M", "L", "XL"],
     colors: ["red", "blue", "yellow", "pink"],
-    stock:'In Stock'
+    stock: "In Stock",
   },
   {
     id: 3,
@@ -220,7 +220,7 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     ratingValue: 5,
     size: ["XS", "SM", "M", "L", "XL"],
     colors: ["red", "blue", "yellow", "pink"],
-    stock:'In Stock'
+    stock: "In Stock",
   },
   {
     id: 4,
@@ -233,7 +233,7 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     ratingValue: 3.4,
     size: ["XS", "SM", "M", "L", "XL"],
     colors: ["red", "blue", "yellow", "pink"],
-    stock:'Out of Stock'
+    stock: "Out of Stock",
   },
 ];
 
@@ -277,5 +277,74 @@ export const OFFER_VOUCHER: voucherTypes[] = [
     title: "Up to 50% off Voucher",
     poster: "/assets/images/cardImg2.svg",
     icons: "/assets/icons/apple-icon.svg",
+  },
+];
+
+export const ABOUT_DELIVERY_SERVICES = [
+  {
+    icon: "assets/icons/deliveryWhite-icon.svg",
+    title: "FREE AND FAST DELIVERY",
+    description: "Free delivery for all orders over $140",
+  },
+  {
+    icon: "assets/icons/customer-icon.svg",
+    title: "24/7 CUSTOMER SERVICE",
+    description: "Friendly 24/7 customer support",
+  },
+  {
+    icon: "assets/icons/secure-icon.svg",
+    title: "MONEY BACK GUARANTEE",
+    description: "We return money within 30 days",
+  },
+];
+
+export const ABOUT_ANALYTIC_SERVICES = [
+  {
+    icon: "assets/icons/shopping-icon.svg",
+    title: "10.5k ",
+    description: "Sallers active our site",
+  },
+  {
+    icon: "assets/icons/giftDoller-icon.svg",
+    title: "33k",
+    description: "Monthly Produduct Sale",
+  },
+  {
+    icon: "assets/icons/shoppingBag-icon.svg",
+    title: "45.5k",
+    description: "Customer active in our site",
+  },
+  {
+    icon: "assets/icons/giftDoller-icon.svg",
+    title: "25k ",
+    description: "Anual gross sale in our site",
+  },
+];
+
+export const MY_TEAM_MEMBER = [
+  {
+    img: "assets/images/team1.svg",
+    name: "Tom Cruise",
+    title: "Founder & Chairman",
+  },
+  {
+    img: "assets/images/team2.svg",
+    name: "Emma Watson",
+    title: "Managing Director",
+  },
+  {
+    img: "assets/images/team3.svg",
+    name: "Will Smith",
+    title: "Product Designer",
+  },
+  {
+    img: "assets/images/team2.svg",
+    name: "Emma Watson",
+    title: "Managing Director",
+  },
+  {
+    img: "assets/images/team1.svg",
+    name: "Tom Cruise",
+    title: "Founder & Chairman",
   },
 ];
