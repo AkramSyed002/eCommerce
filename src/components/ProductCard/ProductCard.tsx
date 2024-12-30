@@ -1,9 +1,10 @@
-import { COLORS } from "@muc/constants";
+import { COLORS, ROUTES } from "@muc/constants";
 import { productCardType } from "@muc/types";
 import { cardIcons, insideProductCard, productCard } from "@muc/utils";
 import { Box, Button, Typography } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import { useCart, useSuccessErrorNotification } from "@muc/context";
+import { useNavigate } from "react-router-dom";
 
 type dataType = {
   data: productCardType;
@@ -12,6 +13,7 @@ type dataType = {
 
 const ProductCard = ({ data, topProduct }: dataType) => {
   const { addProduct } = useCart();
+  const navigate = useNavigate();
   const { setAlert } = useSuccessErrorNotification();
 
   const handleAddToCart = () => {
@@ -32,6 +34,12 @@ const ProductCard = ({ data, topProduct }: dataType) => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleCardClick = () => {
+    navigate(`${ROUTES.PRODUCT_DETAILS_PAGE}/:${data?.id}`, {
+      state: { product: data },
+    });
   };
 
   return (
@@ -57,11 +65,15 @@ const ProductCard = ({ data, topProduct }: dataType) => {
               <Box
                 component={"img"}
                 src="/assets/icons/heart-icon.svg"
-                alt=""
+                alt="favorite"
               />
             </Box>
-            <Box sx={cardIcons}>
-              <Box component={"img"} src="/assets/icons/view-icon.svg" alt="" />
+            <Box sx={cardIcons} onClick={handleCardClick}>
+              <Box
+                component={"img"}
+                src="/assets/icons/view-icon.svg"
+                alt="preview"
+              />
             </Box>
           </Box>
           {topProduct ? null : (
