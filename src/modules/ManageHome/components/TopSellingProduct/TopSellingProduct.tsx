@@ -21,7 +21,7 @@ const TopSellingProduct = () => {
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <CustomBtn
-            title="view all"
+            title="View all"
             variant="contained"
             height="40px"
             color={`${COLORS.white.main}`}

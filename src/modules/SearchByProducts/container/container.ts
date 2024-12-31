@@ -1,0 +1,1 @@
+export {default as SearchByProductsContainer} from './SearchByProductsContainer/SearchByProductsContainer'
