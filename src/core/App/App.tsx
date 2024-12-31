@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import Routes from "../Routes/Routes";
 import { theme } from "@muc/styles";
-import { CartProvider, NotificationContextProvider } from "@muc/context";
+import { CartProvider, CategoryProvider, NotificationContextProvider } from "@muc/context";
 import { SnackBar } from "@muc/components";
 
 const App = () => {
@@ -9,8 +9,10 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CartProvider>
         <NotificationContextProvider>
-          <Routes />
-          <SnackBar />
+          <CategoryProvider>
+            <Routes />
+            <SnackBar />
+          </CategoryProvider>
         </NotificationContextProvider>
       </CartProvider>
     </ThemeProvider>
