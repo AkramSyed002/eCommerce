@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { COLORS, ROUTES } from "@muc/constants";
+import {
+  COLORS,
+  EXPLORE_OUR_PRODUCTS,
+  PRODUCT_CARD,
+  ROUTES,
+  TOP_SELLING_PRODUCTS,
+} from "@muc/constants";
 import {
   FavoriteBorder,
   Menu,
@@ -31,29 +37,59 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState(window.location.pathname); // Initialize with current pathname
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // Update active link based on the current pathname
+  console.log(searchQuery, "----");
+
+  const allProducts = [
+    ...PRODUCT_CARD,
+    ...TOP_SELLING_PRODUCTS,
+    ...EXPLORE_OUR_PRODUCTS,
+  ];
+
+  const handleKeyPress = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") {
+      handleSearchSubmit();
+    }
+  };
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = () => {
+    if (searchQuery.trim()) {
+      const filteredProducts = allProducts.filter(
+        (product) =>
+          product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          product.category.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+
+      navigate(`${ROUTES.SEARCH_PRODUCT_PAGE}`, {
+        state: { filteredProducts, searchQuery },
+      });
+    }
+  };
+
   useEffect(() => {
     const handleLocationChange = () => {
       setActiveLink(window.location.pathname);
     };
 
-    // Listen for location changes
     window.addEventListener("popstate", handleLocationChange);
 
-    // Clean up listener on component unmount
     return () => {
       window.removeEventListener("popstate", handleLocationChange);
     };
   }, []);
 
   const handleLinkClick = (route: string) => {
-    setActiveLink(route); // Update active link when clicked
+    setActiveLink(route);
   };
 
   const getLinkStyles = (route: string) => ({
     ...navLink,
-    fontWeight: activeLink === route ? "bold" : "normal", // Apply bold font weight for active link
+    fontWeight: activeLink === route ? "bold" : "normal",
   });
 
   return (
@@ -212,16 +248,22 @@ const Navbar = () => {
               <TextField
                 placeholder="What are you looking for?"
                 size="small"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                onKeyPress={handleKeyPress}
                 sx={searchBar}
                 InputProps={{
                   endAdornment: (
                     <Box
                       component={"img"}
                       src="/assets/icons/Search-icon.svg"
+                      onClick={handleSearchSubmit}
+                      style={{ cursor: "pointer" }}
                     />
                   ),
                 }}
               />
+
               <FavoriteBorder
                 sx={{ color: COLORS.dark.main, ml: 3, cursor: "pointer" }}
               />
@@ -238,7 +280,7 @@ const Navbar = () => {
                   </Box>
                 ) : null}
               </Box>
-              <AccountDropdown  />
+              <AccountDropdown />
             </Box>
           </>
         )}
