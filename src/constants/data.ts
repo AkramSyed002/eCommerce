@@ -13,6 +13,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "In Stock",
     newPrice: 120,
     oldPrice: 160,
+    category: "Dresses",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 4.5,
@@ -26,6 +27,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "In Stock",
     newPrice: 960,
     oldPrice: 1000,
+    category: "Gaming",
     description:
       "This component is tailored to match your in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.6,
@@ -39,6 +41,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "Out of Stock",
     newPrice: 1150,
     oldPrice: 1440,
+    category: "Shirts",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. ",
     ratingValue: 5,
@@ -52,6 +55,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "Out of Stock",
     newPrice: 375,
     oldPrice: 540,
+    category: "Headphone",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!aflkja dfaldf aldkjfl;akjflka",
     ratingValue: 3.4,
@@ -65,6 +69,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "In Stock",
     newPrice: 375,
     oldPrice: 540,
+    category: "Computer",
     description:
       "provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
@@ -78,6 +83,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "In Stock",
     newPrice: 375,
     oldPrice: 540,
+    category: "Computer",
     description:
       "This component is tailored to match yourFigma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
@@ -91,6 +97,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "Out of Stock",
     newPrice: 375,
     oldPrice: 540,
+    category: "SmartWatch",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
@@ -104,6 +111,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "Out of Stock",
     newPrice: 960,
     oldPrice: 1000,
+    category: "Phone",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know",
     ratingValue: 3.6,
@@ -146,9 +154,13 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     title: "HAVIT HV GAMEPAD",
     newPrice: 120,
     oldPrice: 160,
+    category:"Electronics",
+    stock: "In Stock",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 4.5,
+     size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
   },
   {
     id: 2,
@@ -156,9 +168,13 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     title: "AK WIRED KEYBOARD",
     newPrice: 960,
     oldPrice: 1000,
+    category:"Phone",
+    stock: "Out of Stock",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.6,
+     size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
   },
   {
     id: 3,
@@ -166,9 +182,13 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     title: "GAMING MANITOR",
     newPrice: 1150,
     oldPrice: 1440,
+    category:"Gaming",
+    stock: "In Stock",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 5,
+     size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
   },
   {
     id: 4,
@@ -176,9 +196,13 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     title: "COMFORT CHAIR",
     newPrice: 375,
     oldPrice: 540,
+    category:"SmartWatch",
+    stock: "In Stock",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
+     size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
   },
 ];
 
@@ -195,6 +219,7 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     size: ["XS", "SM", "M", "L", "XL"],
     colors: ["red", "blue", "yellow", "pink"],
     stock: "Out of Stock",
+    category: "Phone",
   },
   {
     id: 2,
@@ -208,6 +233,7 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     size: ["XS", "SM", "M", "L", "XL"],
     colors: ["red", "blue", "yellow", "pink"],
     stock: "In Stock",
+    category: "Computer",
   },
   {
     id: 3,
@@ -221,6 +247,7 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     size: ["XS", "SM", "M", "L", "XL"],
     colors: ["red", "blue", "yellow", "pink"],
     stock: "In Stock",
+    category: "Gampad",
   },
   {
     id: 4,
@@ -234,6 +261,7 @@ export const EXPLORE_OUR_PRODUCTS: productCardType[] = [
     size: ["XS", "SM", "M", "L", "XL"],
     colors: ["red", "blue", "yellow", "pink"],
     stock: "Out of Stock",
+    category: "Camera",
   },
 ];
 

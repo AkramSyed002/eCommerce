@@ -1,5 +1,6 @@
 import { CustomBtn, ProductCard } from "@muc/components";
 import { COLORS, TOP_SELLING_PRODUCTS } from "@muc/constants";
+import { topSellingProducts } from "@muc/types";
 import { Box, Typography } from "@mui/material";
 
 const TopSellingProduct = () => {
@@ -21,7 +22,7 @@ const TopSellingProduct = () => {
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <CustomBtn
-            title="view all"
+            title="View all"
             variant="contained"
             height="40px"
             color={`${COLORS.white.main}`}
@@ -37,7 +38,7 @@ const TopSellingProduct = () => {
           justifyContent: "center",
         }}
       >
-        {TOP_SELLING_PRODUCTS.slice(0, 4).map((data) => (
+        {TOP_SELLING_PRODUCTS.slice(0, 4).map((data:topSellingProducts) => (
           <ProductCard data={data} topProduct={true} />
         ))}
       </Box>

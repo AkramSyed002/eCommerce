@@ -30,6 +30,7 @@ export const navLink = {
   color: `${COLORS.dark.main}`,
   textDecoration: "none",
   pb: 1,
+  cursor:'pointer'
 };
 
 export const arrowBtn = {

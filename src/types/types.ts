@@ -8,7 +8,8 @@ export type productCardType = {
   description: string;
   colors: string[];
   size: string[];
-  stock:string;
+  stock: string;
+  category: string;
 };
 
 export type categoryTypes = {
@@ -24,6 +25,10 @@ export type topSellingProducts = {
   oldPrice: number;
   ratingValue: number;
   description: string;
+  category: string;
+  size: string[];
+  colors: string[];
+  stock:string,
 };
 
 export type voucherTypes = {

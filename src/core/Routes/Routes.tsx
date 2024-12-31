@@ -3,8 +3,10 @@ import { SignInContainer, SignUpContainer } from "@muc/modules";
 import {
   About,
   Contact,
+  FilterByProducts,
   Home,
   ProductDetails,
+  SearchProducts,
   ShoppingCart,
 } from "@muc/screens";
 import { Route, Routes as ReactRoutes } from "react-router-dom";
@@ -20,9 +22,14 @@ const Routes = () => {
       <Route path={ROUTES.CONTACT_PAGE} element={<Contact />} />
       <Route path={ROUTES.SHOPPING_CART} element={<ShoppingCart />} />
       <Route
+        path={`${ROUTES.FILTERS_PRODUCTS_PAGE}/:title`}
+        element={<FilterByProducts />}
+      />
+      <Route
         path={`${ROUTES.PRODUCT_DETAILS_PAGE}/:id`}
         element={<ProductDetails />}
       />
+      <Route path={ROUTES.SEARCH_PRODUCT_PAGE} element={<SearchProducts />} />
       <Route
         path={ROUTES.AUTHENTICATION.SIGNIN_FORM}
         element={<SignInContainer />}
