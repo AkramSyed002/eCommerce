@@ -13,7 +13,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "In Stock",
     newPrice: 120,
     oldPrice: 160,
-    category: "Camera",
+    category: "Dresses",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 4.5,
@@ -41,7 +41,7 @@ export const PRODUCT_CARD: productCardType[] = [
     stock: "Out of Stock",
     newPrice: 1150,
     oldPrice: 1440,
-    category: "Headphone",
+    category: "Shirts",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. ",
     ratingValue: 5,
@@ -154,10 +154,13 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     title: "HAVIT HV GAMEPAD",
     newPrice: 120,
     oldPrice: 160,
-    category:"Computer",
+    category:"Electronics",
+    stock: "In Stock",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 4.5,
+     size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
   },
   {
     id: 2,
@@ -166,9 +169,12 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     newPrice: 960,
     oldPrice: 1000,
     category:"Phone",
+    stock: "Out of Stock",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.6,
+     size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
   },
   {
     id: 3,
@@ -177,9 +183,12 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     newPrice: 1150,
     oldPrice: 1440,
     category:"Gaming",
+    stock: "In Stock",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 5,
+     size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
   },
   {
     id: 4,
@@ -188,9 +197,12 @@ export const TOP_SELLING_PRODUCTS: topSellingProducts[] = [
     newPrice: 375,
     oldPrice: 540,
     category:"SmartWatch",
+    stock: "In Stock",
     description:
       "This component is tailored to match your provided design and includes all the features seen in the Figma image. Let me know if you need further adjustments!",
     ratingValue: 3.4,
+     size: ["XS", "SM", "M", "L", "XL"],
+    colors: ["red", "blue", "yellow", "pink"],
   },
 ];
 

@@ -17,14 +17,18 @@ type Product = {
 
 interface FilterProductListProps {
   filterProduct: Product[];
+  filterByLink: Product[];
 }
 
 const FilterProductList: React.FC<FilterProductListProps> = ({
   filterProduct,
+  filterByLink,
 }) => {
   const navigate = useNavigate();
   const { addProduct } = useCart();
   const { setAlert } = useSuccessErrorNotification();
+
+  console.log(filterByLink, "///////////////////////////////");
 
   const handleAddToCart = (product: Product) => {
     try {
@@ -52,7 +56,10 @@ const FilterProductList: React.FC<FilterProductListProps> = ({
     });
   };
 
-  if (filterProduct.length === 0) {
+  const productsToDisplay =
+    filterProduct.length > 0 ? filterProduct : filterByLink;
+
+  if (productsToDisplay.length === 0) {
     return (
       <Box
         sx={{
@@ -91,7 +98,7 @@ const FilterProductList: React.FC<FilterProductListProps> = ({
       <Box
         sx={{ display: "flex", gap: "20px", width: "100%", flexWrap: "wrap" }}
       >
-        {filterProduct.map((data, index) => (
+        {productsToDisplay?.map((data, index) => (
           <Box
             key={index}
             sx={{

@@ -26,6 +26,9 @@ export type topSellingProducts = {
   ratingValue: number;
   description: string;
   category: string;
+  size: string[];
+  colors: string[];
+  stock:string,
 };
 
 export type voucherTypes = {
