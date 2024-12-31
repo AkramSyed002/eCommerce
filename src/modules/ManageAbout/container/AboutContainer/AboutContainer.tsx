@@ -1,11 +1,20 @@
-import { AppLayout } from '@muc/layout'
+import { AppLayout } from "@muc/layout";
+import {
+  AboutStory,
+  AnalyticCard,
+  OurServices,
+  TeamSlider,
+} from "../../components/components";
 
 const AboutContainer = () => {
   return (
     <AppLayout>
-       <h1>Aultjl containet</h1>
+      <AboutStory />
+      <AnalyticCard />
+      <TeamSlider />
+      <OurServices />
     </AppLayout>
-  )
-}
+  );
+};
 
-export default AboutContainer
+export default AboutContainer;

@@ -7,3 +7,4 @@ export { default as MusicExperience } from "./MusicExperience/MusicExperience";
 export { default as AsideLinkMenu } from "./AsideLinkMenu/AsideLinkMenu";
 export { default as SnackBar } from "./SnackBar/SnackBar";
 export { default as AccountDropdown } from "./AccountDropdown/AccountDropdown";
+export { default as AboutService } from "./AboutService/AboutService";
