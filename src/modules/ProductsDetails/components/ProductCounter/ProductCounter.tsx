@@ -9,7 +9,6 @@ interface ProductCounterProps {
   product: productCardType;
 }
 const ProductCounter: React.FC<ProductCounterProps> = ({ product }) => {
-  console.log(product);
   const { addProduct } = useCart();
   const { setAlert } = useSuccessErrorNotification();
   const [count, setCount] = useState(1);
