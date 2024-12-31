@@ -21,14 +21,12 @@ interface FilterProductListProps {
 }
 
 const FilterProductList: React.FC<FilterProductListProps> = ({
-  filterProduct,
-  filterByLink,
+  filterProduct = [],
+  filterByLink = [],
 }) => {
   const navigate = useNavigate();
   const { addProduct } = useCart();
   const { setAlert } = useSuccessErrorNotification();
-
-  console.log(filterByLink, "///////////////////////////////");
 
   const handleAddToCart = (product: Product) => {
     try {
@@ -58,6 +56,7 @@ const FilterProductList: React.FC<FilterProductListProps> = ({
 
   const productsToDisplay =
     filterProduct.length > 0 ? filterProduct : filterByLink;
+  console.log(productsToDisplay, "---");
 
   if (productsToDisplay.length === 0) {
     return (
