@@ -4,12 +4,16 @@ import { ProductInfo } from "../../components/components";
 import { OurFeature, ProductCard } from "@muc/components";
 import { PRODUCT_CARD } from "@muc/constants";
 import { Box } from "@mui/material";
+import { useEffect } from "react";
 
 const ProductDetails = () => {
   const { state } = useLocation();
   const product = state?.product;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  console.log(product, "details");
+
   return (
     <AppLayout>
       <ProductInfo productData={product} />

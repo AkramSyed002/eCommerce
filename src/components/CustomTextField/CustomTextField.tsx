@@ -18,6 +18,7 @@ interface CustomTextFieldProps {
   showHelperText?: boolean;
   readOnly?: boolean;
   autoComplete?: string;
+  contact?: boolean;
 }
 
 const CustomTextField: React.FC<CustomTextFieldProps> = ({
@@ -27,6 +28,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
   width,
   defaultValue,
   showHelperText = true,
+  contact,
   ...props
 }) => {
   const { control } = useFormContext();
@@ -40,7 +42,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
         rules={rules}
         render={({ field, fieldState }) => (
           <TextField
-            variant="standard"
+            variant={contact ? "filled" : "standard"}
             {...field}
             placeholder={placeHolder}
             {...props}
