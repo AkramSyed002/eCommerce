@@ -6,3 +6,4 @@ export * from "./ShoppingCart/container/container";
 export * from "./ProductsDetails/container/container";
 export * from "./FilterByProducts/container/container";
 export * from "./SearchByProducts/container/container";
+export * from "./BillingDetails/container/container";
