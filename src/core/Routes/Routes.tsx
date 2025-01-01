@@ -2,6 +2,7 @@ import { ROUTES } from "@muc/constants";
 import { SignInContainer, SignUpContainer } from "@muc/modules";
 import {
   About,
+  BillsDetails,
   Contact,
   FilterByProducts,
   Home,
@@ -30,6 +31,7 @@ const Routes = () => {
         element={<ProductDetails />}
       />
       <Route path={ROUTES.SEARCH_PRODUCT_PAGE} element={<SearchProducts />} />
+      <Route path={ROUTES.BILLINGS_DETAILS_PAGE} element={<BillsDetails />} />
       <Route
         path={ROUTES.AUTHENTICATION.SIGNIN_FORM}
         element={<SignInContainer />}
