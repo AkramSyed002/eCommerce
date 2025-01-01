@@ -41,7 +41,6 @@ const BrowseByCategory = () => {
     autoplay: false,
     slidesToShow: 6,
     slidesToScroll: 1,
-    ref: sliderRef,
   };
 
   return (
@@ -68,7 +67,8 @@ const BrowseByCategory = () => {
           </Typography>
         </Box>
       </Box>
-      <Slider {...settings}>
+      {/* Attach the ref directly to the Slider component */}
+      <Slider {...settings} ref={sliderRef}>
         {PRODUCT_CATEGORIES.map((category, i) => (
           <Box
             sx={{
@@ -76,9 +76,9 @@ const BrowseByCategory = () => {
               gap: "30px",
             }}
             my={2}
+            key={i}
           >
             <Box
-              key={i}
               onClick={() => handleState(i, category)}
               bgcolor={activeIndex === i ? COLORS.primary.main : "transparent"}
               border={
