@@ -1,4 +1,4 @@
-import { COLORS } from "@muc/constants";
+import { COLORS, ROUTES } from "@muc/constants";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -210,6 +210,7 @@ export const ProductList = () => {
               variant="contained"
               height="45px"
               color={`${COLORS.white.main}`}
+              onClick={() => navigate(ROUTES.BILLINGS_DETAILS_PAGE)}
             />
           </Box>
         </Box>
