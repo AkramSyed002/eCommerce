@@ -85,7 +85,7 @@ const ProductOrders = () => {
           }
           label="Bank"
         />
-        <Box sx={{ display: "flex", gap: "5px", alignItems: "center" }}>
+        <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
           <Box component={"img"} src="/assets/images/payment1.svg" />
           <Box component={"img"} src="/assets/images/payment2.svg" />
           <Box component={"img"} src="/assets/images/payment3.svg" />
