@@ -2,14 +2,12 @@ import { useCart } from "@muc/context";
 import { Box, Typography, FormControlLabel, Radio } from "@mui/material";
 import { useState } from "react";
 
-const ProductOrders = () => {
+interface ProductOrdersProps {
+  totalPrice: number;
+}
+const ProductOrders: React.FC<ProductOrdersProps> = ({ totalPrice }) => {
   const { cart } = useCart();
   const productOrder = cart?.products || [];
-
-  const subtotal = productOrder.reduce(
-    (acc, product) => acc + product.price,
-    0
-  );
 
   const [selectedPayment, setSelectedPayment] = useState("bank");
 
@@ -44,7 +42,7 @@ const ProductOrders = () => {
         sx={{ display: "flex", justifyContent: "space-between", mb: 3, mt: 4 }}
       >
         <Typography variant="body1">Subtotal:</Typography>
-        <Typography variant="body1">${subtotal.toFixed(2)}</Typography>
+        <Typography variant="body1">${totalPrice}</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", mb: 3 }}>
         <Typography variant="body1">Shipping:</Typography>
@@ -52,7 +50,7 @@ const ProductOrders = () => {
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", mb: 3 }}>
         <Typography variant="body1">Total:</Typography>
-        <Typography variant="body1">${subtotal.toFixed(2)}</Typography>
+        <Typography variant="body1">${totalPrice}</Typography>
       </Box>
 
       <Box

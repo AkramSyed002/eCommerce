@@ -4,6 +4,7 @@ import { BillingForm, ProductOrders } from "../../components/componetns";
 import { CustomBtn } from "@muc/components";
 import { COLORS } from "@muc/constants";
 import { FormProvider, useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
 
 interface FormData {
   fName?: string;
@@ -16,11 +17,13 @@ interface FormData {
   phoneNumber?: string;
 }
 const BillingDetailsContainer = () => {
+  const { state } = useLocation();
   const methods = useForm<FormData>();
-
+  const totalPrice = state?.total || 0.0;
   const onSubmit = (e: FormData) => {
     console.log(e);
   };
+  
   return (
     <AppLayout>
       <FormProvider {...methods}>
@@ -29,7 +32,7 @@ const BillingDetailsContainer = () => {
             <BillingForm />
           </Grid>
           <Grid item md={6} sm={6} xs={12}>
-            <ProductOrders />
+            <ProductOrders totalPrice={totalPrice} />
             <Box component={"form"} onSubmit={methods.handleSubmit(onSubmit)}>
               <CustomBtn
                 variant="contained"

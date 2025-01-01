@@ -210,7 +210,7 @@ export const ProductList = () => {
               variant="contained"
               height="45px"
               color={`${COLORS.white.main}`}
-              onClick={() => navigate(ROUTES.BILLINGS_DETAILS_PAGE)}
+              onClick={() => navigate(ROUTES.BILLINGS_DETAILS_PAGE, { state: { total: calculateTotal() } })}
             />
           </Box>
         </Box>
